@@ -9,34 +9,34 @@ import java.io.Serializable;
 
 /**
  * @Author: charls
- * @Description: rpc响应
- * @Date: 2025/02/11/ 15:42
+ * @Description: rpc请求
+ * @Date: 2025/02/11/ 15:40
  * @Version: 1.0
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RpcResponse implements Serializable {
+public class RpcRequest implements Serializable {
 
     /**
-     * 响应数据
+     * 服务名称
      */
-    private Object data;
+    private String serviceName;
 
     /**
-     * 响应数据类型（预留）
+     * 方法名称
      */
-    private Class<?> dataType;
+    private String methodName;
 
     /**
-     * 响应信息
+     * 参数类型列表
      */
-    private String message;
+    private Class<?>[] parameterTypes;
 
     /**
-     * 异常信息
+     * 参数列表
      */
-    private Exception exception;
+    private Object[] args;
 
 }
