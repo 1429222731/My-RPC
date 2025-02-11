@@ -1,6 +1,9 @@
 package com.charls.example.consumer;
 
+import com.charls.example.common.model.User;
+import com.charls.example.common.service.UserService;
 import com.charls.myrpc.config.RpcConfig;
+import com.charls.myrpc.proxy.ServiceProxyFactory;
 import com.charls.myrpc.utils.ConfigUtils;
 
 /**
@@ -12,7 +15,22 @@ import com.charls.myrpc.utils.ConfigUtils;
 public class ConsumerExample {
 
     public static void main(String[] args) {
-        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
-        System.out.println(rpc);
+//        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
+//        System.out.println(rpc);
+
+        // 获取代理
+        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
+        User user = new User();
+        user.setName("charls");
+        // 调用
+        User newUser = userService.getUser(user);
+        if (newUser != null) {
+            System.out.println(newUser.getName());
+        } else {
+            System.out.println("user == null");
+        }
+
+        long number = userService.getNumber();
+        System.out.println(number);
     }
 }
