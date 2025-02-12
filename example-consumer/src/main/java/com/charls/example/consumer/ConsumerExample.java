@@ -18,19 +18,21 @@ public class ConsumerExample {
 //        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
 //        System.out.println(rpc);
 
-        // 获取代理
-        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
-        User user = new User();
-        user.setName("charls");
-        // 调用
-        User newUser = userService.getUser(user);
-        if (newUser != null) {
-            System.out.println(newUser.getName());
-        } else {
-            System.out.println("user == null");
-        }
+        for (int i = 0; i < 3; i++) {
+            // 获取代理
+            UserService userService = ServiceProxyFactory.getProxy(UserService.class);
+            User user = new User();
+            user.setName("charls");
+            // 调用
+            User newUser = userService.getUser(user);
+            if (newUser != null) {
+                System.out.println(newUser.getName());
+            } else {
+                System.out.println("user == null");
+            }
 
-        long number = userService.getNumber();
-        System.out.println(number);
+            long number = userService.getNumber();
+            System.out.println(number);
+        }
     }
 }
