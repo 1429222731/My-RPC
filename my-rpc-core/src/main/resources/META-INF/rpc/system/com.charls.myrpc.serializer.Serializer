@@ -1,0 +1,2 @@
+jdk=com.charls.myrpc.serializer.JdkSerializer
+hessian=com.charls.myrpc.serializer.HessianSerializer

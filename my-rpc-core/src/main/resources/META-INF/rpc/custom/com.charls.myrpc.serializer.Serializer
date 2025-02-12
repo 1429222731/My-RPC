@@ -1,0 +1,2 @@
+json=com.charls.myrpc.serializer.JsonSerializer
+kryo=com.charls.myrpc.serializer.KryoSerializer

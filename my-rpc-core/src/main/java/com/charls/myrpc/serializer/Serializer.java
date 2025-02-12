@@ -23,10 +23,10 @@ public interface Serializer {
      * 反序列化
      *
      * @param bytes
-     * @param type
+     * @param tClass
      * @param <T>
      * @return
      * @throws IOException
      */
-    <T> T deserialize(byte[] bytes, Class<T> type) throws IOException;
+    <T> T deserialize(byte[] bytes, Class<T> tClass) throws IOException;
 }
