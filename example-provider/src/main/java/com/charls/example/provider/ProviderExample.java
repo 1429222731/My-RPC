@@ -10,6 +10,7 @@ import com.charls.myrpc.registry.Registry;
 import com.charls.myrpc.registry.RegistryFactory;
 import com.charls.myrpc.server.HttpServer;
 import com.charls.myrpc.server.VertxHttpServer;
+import com.charls.myrpc.server.tcp.VertxTcpServer;
 
 /**
  * @Author: charls
@@ -42,7 +43,11 @@ public class ProviderExample {
         }
 
         // 启动web服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+//        HttpServer httpServer = new VertxHttpServer();
+//        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }
