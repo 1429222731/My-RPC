@@ -1,0 +1,4 @@
+failBack=com.charls.myrpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.charls.myrpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.charls.myrpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.charls.myrpc.fault.tolerant.FailSafeTolerantStrategy
